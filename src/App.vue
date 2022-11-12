@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div>
+        <h1>Hello World..!</h1>
+        <UserSelect :data="usersListData"/>
+    </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
+<script setup lang="ts">
+import ApiServices from './services/ApiService';
+import UserSelect from './components/UserList.vue'
+import { onMounted, reactive, ref } from 'vue';
+import type {Ref} from 'vue'
+import { User, ResponseStructure } from './services/ApiTypes';
+// import { User } from './services/responseTypes';
 
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
+
+
+let usersListData: Ref<Array<User>> = ref([])
+
+
+
+
+onMounted(() => {
+  
+    ApiServices.getAllUsers().then( (response: ResponseStructure) => {
+        usersListData.value = response.data
+    })
+
+})
+
+
+
+
+    
+  
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+<style scoped lang="sass">
+h1{
+    color: brown;
 }
 </style>
