@@ -1,8 +1,7 @@
 <template>
-
     <div class="mt-5 container">
         <PostsList :postsList="postsList"/>
-        <TodosList :userList="userList" :postsList="postsList"/>
+        <TodosList :userList="userList" :todoList="todosList"/>
     </div>
 </template>
 <script setup lang="ts">
@@ -30,9 +29,7 @@ onMounted(() => {
     }).catch(err => {
         console.error(err.message)
     })
-
-    
-    
+        
 })
 
 </script>

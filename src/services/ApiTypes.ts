@@ -16,6 +16,8 @@ export interface Todos {
     body: string;
     id: number;
     title: string;
+    status: 'completed' | 'pending';
+    due_on: string;
     user_id: number;
 }
 

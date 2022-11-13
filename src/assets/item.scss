@@ -1,0 +1,37 @@
+.product-card {
+    display: block;
+    height: auto;
+
+    &:hover {
+        box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25),
+          0 0 1px rgba(9, 30, 66, 0.31);
+        transition: box-shadow 0.25s ease-in-out 0s,
+          -webkit-box-shadow 0.25s ease-in-out 0s;
+      }
+
+      .footer {
+        display: block;
+        width: auto;
+        
+        .status {
+          height: 25px;
+        }
+
+        .date-time-wrapper {
+          display: flex;
+          font-size: 12px;
+          font-weight: 700;
+          margin-top: 10px ;
+
+          .date {
+            margin-right: 20px;
+          }
+        }
+      }
+      
+}
+
+.details {
+  min-height: 150px;
+  position: relative;
+}

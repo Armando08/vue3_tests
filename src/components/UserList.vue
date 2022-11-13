@@ -2,7 +2,7 @@
   <div class="select-width">
     <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-lg" v-model="selectedUser" @change="selectedId(selectedUser)" >
         <option disabled default selected value="">Select user to filter</option>
-        <option v-for="user in userList" :key="user.id" :value="user.id" >{{user.name}}</option>
+        <option selected v-for="user in userList" :key="user.id" :value="user.id" >{{user.name}}</option>
     </select>
   </div>
 </template>
