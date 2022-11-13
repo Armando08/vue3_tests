@@ -5,7 +5,20 @@ export interface User {
     name: string;
     status: string;
 }
+export interface Posts {
+    body: string;
+    id: number;
+    title: string;
+    user_id: number;
+}
+
+export interface Todos {
+    body: string;
+    id: number;
+    title: string;
+    user_id: number;
+}
 
 export interface ResponseStructure {
-    data: Array<User>
+    data: User | Posts | Todos
 }

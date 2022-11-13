@@ -7,7 +7,6 @@ module.exports = {
    
     mode: 'development',
     entry: '/src/main.ts', 
-    // target: 'node',
     output: {
         path: path.resolve(__dirname, "dist"), 
         publicPath: "/",
@@ -28,11 +27,12 @@ module.exports = {
                 options: { appendTsSuffixTo: [/\.vue$/] },
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(scss|sass|less|css)$/,
                 use: [
                     'style-loader',
                     'css-loader', 
                     'sass-loader', // compile sass to css
+                    // 'less-loader',
                 ]
             }
         ]

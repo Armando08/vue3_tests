@@ -1,38 +1,9 @@
 <template>
-    <div>
-        <h1>Hello World..!</h1>
-        <UserSelect :data="usersListData"/>
-    </div>
+    <WebLayout/>
 </template>
 
 <script setup lang="ts">
-import ApiServices from './services/ApiService';
-import UserSelect from './components/UserList.vue'
-import { onMounted, reactive, ref } from 'vue';
-import type {Ref} from 'vue'
-import { User, ResponseStructure } from './services/ApiTypes';
-// import { User } from './services/responseTypes';
-
-
-
-let usersListData: Ref<Array<User>> = ref([])
-
-
-
-
-onMounted(() => {
-  
-    ApiServices.getAllUsers().then( (response: ResponseStructure) => {
-        usersListData.value = response.data
-    })
-
-})
-
-
-
-
-    
-  
+import WebLayout from './view/WebLayout.vue';  
 </script>
 
 
